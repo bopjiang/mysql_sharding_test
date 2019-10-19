@@ -1,0 +1,46 @@
+{
+    "name": "ns1",
+    "online": true,
+    "read_only": false,
+    "allowed_dbs": {
+        "db_test": true,
+    },
+    "slices": [
+        {
+            "name": "slice-0",
+            "user_name": "root",
+            "password": "root",
+            "master": "127.0.0.1:3306",
+            "capacity": 64,
+            "max_capacity": 128,
+            "idle_timeout": 3600
+        }
+    ],
+    "shard_rules": [
+        {
+            "db": "db_test",
+            "table": "tbl_test1",
+            "type": "hash",
+            "key": "id",
+            "locations": [
+                8,
+            ],
+            "slices": [
+                "slice-0"
+            ]
+        }
+
+    ],
+    "global_sequences": [
+     ],
+    "users": [
+        {
+            "user_name": "test_shard",
+            "password": "test_shard",
+            "namespace": "ns1",
+            "rw_flag": 2,
+            "rw_split": 1
+        }
+    ],
+    "default_slice": "slice-0"
+}
