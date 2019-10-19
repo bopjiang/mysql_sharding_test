@@ -3,7 +3,7 @@
     "online": true,
     "read_only": false,
     "allowed_dbs": {
-        "db_test": true,
+        "db_test": true
     },
     "slices": [
         {
@@ -23,7 +23,7 @@
             "type": "hash",
             "key": "id",
             "locations": [
-                8,
+                8
             ],
             "slices": [
                 "slice-0"
