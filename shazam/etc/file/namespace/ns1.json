@@ -1,46 +1,82 @@
 {
-    "name": "ns1",
-    "online": true,
-    "read_only": false,
     "allowed_dbs": {
         "db_test": true
     },
-    "slices": [
-        {
-            "name": "slice-0",
-            "user_name": "root",
-            "password": "root",
-            "master": "127.0.0.1:3306",
-            "capacity": 64,
-            "max_capacity": 128,
-            "idle_timeout": 3600
-        }
-    ],
+    "default_slice": "slice-0",
+    "global_sequences": [],
+    "name": "ns1",
+    "online": true,
+    "read_only": false,
     "shard_rules": [
         {
             "db": "db_test",
-            "table": "tbl_test1",
-            "type": "hash",
             "key": "id",
             "locations": [
-                8
+                4
             ],
             "slices": [
                 "slice-0"
-            ]
+            ],
+            "table": "tbl_test1",
+            "type": "hash"
+        },
+        {
+            "db": "db_test",
+            "key": "id",
+            "locations": [
+                4
+            ],
+            "slices": [
+                "slice-0"
+            ],
+            "table": "tbl_test2",
+            "type": "hash"
+        },
+        {
+            "db": "db_test",
+            "key": "id",
+            "locations": [
+                4
+            ],
+            "slices": [
+                "slice-0"
+            ],
+            "table": "tbl_test3",
+            "type": "hash"
+        },
+        {
+            "db": "db_test",
+            "key": "id",
+            "parent_table": "tbl_test1",
+            "table": "tbl_test3",
+            "type": "linked"
+        },
+        {
+            "db": "db_test",
+            "key": "ref_a",
+            "parent_table": "tbl_test1",
+            "table": "tbl_test2",
+            "type": "linked"
         }
-
     ],
-    "global_sequences": [
-     ],
+    "slices": [
+        {
+            "capacity": 64,
+            "idle_timeout": 3600,
+            "master": "127.0.0.1:3306",
+            "max_capacity": 128,
+            "name": "slice-0",
+            "password": "example",
+            "user_name": "root"
+        }
+    ],
     "users": [
         {
-            "user_name": "test_shard",
-            "password": "test_shard",
             "namespace": "ns1",
+            "password": "test_shard",
             "rw_flag": 2,
-            "rw_split": 1
+            "rw_split": 1,
+            "user_name": "test_shard"
         }
-    ],
-    "default_slice": "slice-0"
+    ]
 }
