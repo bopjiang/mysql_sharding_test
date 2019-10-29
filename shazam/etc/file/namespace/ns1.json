@@ -63,7 +63,7 @@
         {
             "capacity": 64,
             "idle_timeout": 3600,
-            "master": "127.0.0.1:3306",
+            "master": "db_master:3306",
             "max_capacity": 128,
             "name": "slice-0",
             "password": "example",

@@ -1,0 +1,50 @@
+version: '3.1'
+services:
+  db_master:
+    image: mysql:5.7.26
+    command: --default-authentication-plugin=mysql_native_password --plugin-load=server_audit.so
+    #restart: always
+    volumes:
+      - ./mysql_master/data:/var/lib/mysql
+      - ./mysql_master/conf.d:/etc/mysql/conf.d
+      - ./mysql_master/plugin:/usr/lib/mysql/plugin
+      - ./mysql_master/logs:/data/mysql/logs
+    ports:
+      - 127.0.0.1:13306:3306
+    networks:
+      - db-test-network
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: db_test
+
+  db_slave:
+    image: mysql:5.7.26
+    command: --default-authentication-plugin=mysql_native_password --plugin-load=server_audit.so
+    #restart: always
+    volumes:
+      - ./mysql_slave/data:/var/lib/mysql
+      - ./mysql_slave/conf.d:/etc/mysql/conf.d
+      - ./mysql_slave/plugin:/usr/lib/mysql/plugin
+      - ./mysql_slave/logs:/data/mysql/logs
+    ports:
+      - 127.0.0.1:13316:3306
+    networks:
+      - db-test-network
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: db_test
+
+  shazam_proxy:
+    image: bopjiang/shazam-proxy:latest
+    command: ["-config", "/data/shazam/etc/shazam_proxy.ini"]
+    #restart: always
+    ports:
+      - 127.0.0.1:23307:3307
+      - 127.0.0.1:23306:3306
+    networks:
+      - db-test-network
+    volumes:
+      - ./shazam:/data/shazam
+
+networks:
+  db-test-network:
