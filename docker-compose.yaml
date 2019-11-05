@@ -32,7 +32,6 @@ services:
       - db-test-network
     environment:
       MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: db_test
 
   shazam_proxy:
     image: bopjiang/shazam:latest
