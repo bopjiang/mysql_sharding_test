@@ -1,4 +1,4 @@
-## database init
+## Database Initialization
 
 ### recovery slave from master
 
@@ -12,6 +12,7 @@ mysql -h127.0.0.1 --port=13316 --user=root -pexample < dump.sql
 ```
 
 ### set master-slave replication
+
 ```sql
 /*-- on slave --*/
 > CHANGE MASTER TO
@@ -20,8 +21,17 @@ mysql -h127.0.0.1 --port=13316 --user=root -pexample < dump.sql
         MASTER_USER = "root",
         MASTER_PASSWORD = "example",
         MASTER_AUTO_POSITION = 1;
-> start slave;
-> show slave status\G
+> START SLAVE;
+> SHOW SLAVE STATUS\G
+```
+
+### make slave read-only
+
+```sql
+SET GLOBAL read_only = ON;
+SET GLOBAL super_read_only = ON;
+
+SHOW VARIABLES LIKE "%read_only%";
 ```
 
 ## shazam-proxy API
@@ -32,5 +42,6 @@ mysql -h127.0.0.1 --port=13316 --user=root -pexample < dump.sql
 ### Go profile
 * http://127.0.0.1:23307/debug/pprof/
 * http://127.0.0.1:23307/debug/pprof/goroutine?debug=1
+
 
 
