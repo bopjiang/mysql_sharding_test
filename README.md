@@ -34,6 +34,19 @@ SET GLOBAL super_read_only = ON;
 SHOW VARIABLES LIKE "%read_only%";
 ```
 
+## Test
+### Read/Write Splitting
+
+```bash
+$ mysql -utest_shard -ptest_shard -h127.0.0.1 -P23306 -Ddb_test --comments;
+
+# force reading from master
+> SELECT/*master*/ * FROM t6;
+
+# read from slave
+> SELECT * FROM t6;
+```
+
 ## shazam-proxy API
 
 ### prometheus metrics

@@ -64,11 +64,12 @@
             "capacity": 64,
             "idle_timeout": 3600,
             "master": "db_master:3306",
+            "slaves": ["db_slave:3306"],
             "max_capacity": 128,
             "name": "slice-0",
             "password": "example",
             "user_name": "root"
-        }
+         }
     ],
     "users": [
         {
