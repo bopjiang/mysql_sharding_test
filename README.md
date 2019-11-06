@@ -1,6 +1,6 @@
 ## Database Initialization
 
-### recovery slave from master
+### Recover slave from master
 
 ```bash
 ## master
@@ -11,7 +11,7 @@ mysql -h127.0.0.1 --port=13316 --user=root -pexample -e  'reset master'
 mysql -h127.0.0.1 --port=13316 --user=root -pexample < dump.sql
 ```
 
-### set master-slave replication
+### Config replication
 
 ```sql
 /*-- on slave --*/
@@ -25,7 +25,7 @@ mysql -h127.0.0.1 --port=13316 --user=root -pexample < dump.sql
 > SHOW SLAVE STATUS\G
 ```
 
-### make slave read-only
+### Make slave read-only
 
 ```sql
 SET GLOBAL read_only = ON;
@@ -38,7 +38,7 @@ SHOW VARIABLES LIKE "%read_only%";
 ### Read/Write Splitting
 
 ```bash
-$ mysql -utest_shard -ptest_shard -h127.0.0.1 -P23306 -Ddb_test --comments;
+$ mysql -utest_shard -ptest_shard -h127.0.0.1 -P23306 -Ddb_test --comments
 
 # force reading from master
 > SELECT/*master*/ * FROM t6;
@@ -47,9 +47,9 @@ $ mysql -utest_shard -ptest_shard -h127.0.0.1 -P23306 -Ddb_test --comments;
 > SELECT * FROM t6;
 ```
 
-## shazam-proxy API
+## Shazam-proxy API
 
-### prometheus metrics
+### Prometheus metrics
 * http://127.0.0.1:23307/api/metric/metrics
 
 ### Go profile
