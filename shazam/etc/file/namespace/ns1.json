@@ -10,7 +10,7 @@
     "shard_rules": [
         {
             "db": "db_test",
-            "key": "id",
+            "key": "sk",
             "locations": [
                 4
             ],
@@ -22,7 +22,7 @@
         },
         {
             "db": "db_test",
-            "key": "id",
+            "key": "sk",
             "locations": [
                 4
             ],
@@ -34,7 +34,7 @@
         },
         {
             "db": "db_test",
-            "key": "id",
+            "key": "sk",
             "locations": [
                 4
             ],
@@ -46,14 +46,14 @@
         },
         {
             "db": "db_test",
-            "key": "id",
+            "key": "sk",
             "parent_table": "tbl_test1",
             "table": "tbl_test3",
             "type": "linked"
         },
         {
             "db": "db_test",
-            "key": "ref_a",
+            "key": "sk",
             "parent_table": "tbl_test1",
             "table": "tbl_test2",
             "type": "linked"

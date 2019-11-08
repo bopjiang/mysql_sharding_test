@@ -1,138 +1,33 @@
--- MySQL dump 10.17  Distrib 10.3.17-MariaDB, for debian-linux-gnu (x86_64)
---
--- Host: 127.0.0.1    Database: db_test
--- ------------------------------------------------------
--- Server version	5.7.26-log
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+BEGIN;
+INSERT INTO `tbl_test1`(a, sk) VALUES (0,100);
+INSERT INTO `tbl_test1`(a, sk) VALUES (1,101);
+INSERT INTO `tbl_test1`(a, sk) VALUES (2,102);
+INSERT INTO `tbl_test1`(a, sk) VALUES (3,103);
+INSERT INTO `tbl_test1`(a, sk) VALUES (4,104);
+INSERT INTO `tbl_test1`(a, sk) VALUES (5,105);
+INSERT INTO `tbl_test1`(a, sk) VALUES (6,106);
+INSERT INTO `tbl_test1`(a, sk) VALUES (7,107);
+COMMIT;
 
---
--- Dumping data for table `tbl_test1_0000`
---
+BEGIN;
+INSERT INTO `tbl_test2`(b, sk) VALUES (10,100);
+INSERT INTO `tbl_test2`(b, sk) VALUES (11,101);
+INSERT INTO `tbl_test2`(b, sk) VALUES (12,102);
+INSERT INTO `tbl_test2`(b, sk) VALUES (13,103);
+INSERT INTO `tbl_test2`(b, sk) VALUES (14,104);
+INSERT INTO `tbl_test2`(b, sk) VALUES (15,105);
+INSERT INTO `tbl_test2`(b, sk) VALUES (16,106);
+INSERT INTO `tbl_test2`(b, sk) VALUES (17,107);
+COMMIT;
 
-LOCK TABLES `tbl_test1_0000` WRITE;
-/*!40000 ALTER TABLE `tbl_test1_0000` DISABLE KEYS */;
-INSERT INTO `tbl_test1_0000` VALUES (4,14);
-/*!40000 ALTER TABLE `tbl_test1_0000` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test1_0001`
---
-
-LOCK TABLES `tbl_test1_0001` WRITE;
-/*!40000 ALTER TABLE `tbl_test1_0001` DISABLE KEYS */;
-INSERT INTO `tbl_test1_0001` VALUES (1,10);
-/*!40000 ALTER TABLE `tbl_test1_0001` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test1_0002`
---
-
-LOCK TABLES `tbl_test1_0002` WRITE;
-/*!40000 ALTER TABLE `tbl_test1_0002` DISABLE KEYS */;
-INSERT INTO `tbl_test1_0002` VALUES (2,12);
-/*!40000 ALTER TABLE `tbl_test1_0002` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test1_0003`
---
-
-LOCK TABLES `tbl_test1_0003` WRITE;
-/*!40000 ALTER TABLE `tbl_test1_0003` DISABLE KEYS */;
-INSERT INTO `tbl_test1_0003` VALUES (3,13);
-/*!40000 ALTER TABLE `tbl_test1_0003` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test2_0000`
---
-
-LOCK TABLES `tbl_test2_0000` WRITE;
-/*!40000 ALTER TABLE `tbl_test2_0000` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_test2_0000` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test2_0001`
---
-
-LOCK TABLES `tbl_test2_0001` WRITE;
-/*!40000 ALTER TABLE `tbl_test2_0001` DISABLE KEYS */;
-INSERT INTO `tbl_test2_0001` VALUES (1,11,101);
-/*!40000 ALTER TABLE `tbl_test2_0001` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test2_0002`
---
-
-LOCK TABLES `tbl_test2_0002` WRITE;
-/*!40000 ALTER TABLE `tbl_test2_0002` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_test2_0002` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test2_0003`
---
-
-LOCK TABLES `tbl_test2_0003` WRITE;
-/*!40000 ALTER TABLE `tbl_test2_0003` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_test2_0003` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test3_0000`
---
-
-LOCK TABLES `tbl_test3_0000` WRITE;
-/*!40000 ALTER TABLE `tbl_test3_0000` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_test3_0000` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test3_0001`
---
-
-LOCK TABLES `tbl_test3_0001` WRITE;
-/*!40000 ALTER TABLE `tbl_test3_0001` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_test3_0001` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test3_0002`
---
-
-LOCK TABLES `tbl_test3_0002` WRITE;
-/*!40000 ALTER TABLE `tbl_test3_0002` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_test3_0002` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `tbl_test3_0003`
---
-
-LOCK TABLES `tbl_test3_0003` WRITE;
-/*!40000 ALTER TABLE `tbl_test3_0003` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_test3_0003` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2019-10-21  8:03:46
+BEGIN;
+INSERT INTO `tbl_test3`(c, sk) VALUES (20,100);
+INSERT INTO `tbl_test3`(c, sk) VALUES (21,101);
+INSERT INTO `tbl_test3`(c, sk) VALUES (22,102);
+INSERT INTO `tbl_test3`(c, sk) VALUES (23,103);
+INSERT INTO `tbl_test3`(c, sk) VALUES (24,104);
+INSERT INTO `tbl_test3`(c, sk) VALUES (25,105);
+INSERT INTO `tbl_test3`(c, sk) VALUES (26,106);
+INSERT INTO `tbl_test3`(c, sk) VALUES (27,107);
+COMMIT;
