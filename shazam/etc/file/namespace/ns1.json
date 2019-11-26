@@ -57,7 +57,31 @@
             "parent_table": "tbl_test1",
             "table": "tbl_test2",
             "type": "linked"
-        }
+        },
+	{
+            "db": "db_test",
+            "key": "sk",
+            "locations": [
+                4
+            ],
+            "slices": [
+                "slice-0"
+            ],
+            "table": "tbl_TEST10",
+            "type": "hash"
+        },
+	{
+            "db": "db_test",
+            "key": "SK",
+            "locations": [
+                4
+            ],
+            "slices": [
+                "slice-0"
+            ],
+            "table": "tbl_test11",
+            "type": "hash"
+        },
     ],
     "slices": [
         {
