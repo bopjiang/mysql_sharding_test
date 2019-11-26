@@ -58,11 +58,11 @@
             "table": "tbl_test2",
             "type": "linked"
         },
-	{
+        {
             "db": "db_test",
             "key": "sk",
             "locations": [
-                4
+                3
             ],
             "slices": [
                 "slice-0"
@@ -70,30 +70,32 @@
             "table": "tbl_TEST10",
             "type": "hash"
         },
-	{
+        {
             "db": "db_test",
             "key": "SK",
             "locations": [
-                4
+                3
             ],
             "slices": [
                 "slice-0"
             ],
             "table": "tbl_test11",
             "type": "hash"
-        },
+        }
     ],
     "slices": [
         {
             "capacity": 64,
             "idle_timeout": 3600,
             "master": "db_master:3306",
-            "slaves": ["db_slave:3306"],
+            "slaves": [
+                "db_slave:3306"
+            ],
             "max_capacity": 128,
             "name": "slice-0",
             "password": "example",
             "user_name": "root"
-         }
+        }
     ],
     "users": [
         {
